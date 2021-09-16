@@ -59,6 +59,9 @@ class CountryCell: UITableViewCell, AutoConfiguringCell {
     typealias Model = Country
 
     func setUp(with model: Country) {
-        self.textLabel?.text = "\(model.name) - \(model.capital)"
+        var config = UIListContentConfiguration.subtitleCell()
+        config.text = model.name
+        config.secondaryText = model.capital
+        contentConfiguration = config
     }
 }
